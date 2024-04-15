@@ -7,6 +7,8 @@ defmodule Cognac.QueryArgument do
 
   def build(arguments, pretty?), do: build_arguments(arguments, pretty?)
 
+  defp build_arguments([], _pretty?), do: []
+
   defp build_arguments(arguments, pretty?) when is_map(arguments) do
     build_arguments(Map.to_list(arguments), pretty?)
   end
